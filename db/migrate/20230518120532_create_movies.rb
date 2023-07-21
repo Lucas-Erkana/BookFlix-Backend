@@ -8,7 +8,6 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.float :duration
       t.float :rating
       t.string :trailer
-
       t.timestamps
     end
   end

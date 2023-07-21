@@ -1,0 +1,509 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/users/login":
+    post:
+      summary: User Sign In
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: Logged in successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: integer
+                      message:
+                        type: string
+                    required:
+                    - code
+                    - message
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      full_name:
+                        type: string
+                      email:
+                        type: string
+                      role:
+                        type: string
+                    required:
+                    - id
+                    - full_name
+                    - email
+                    - role
+                required:
+                - status
+                - data
+        '401':
+          description: Couldn't find an active session
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  message:
+                    type: string
+                required:
+                - status
+                - message
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - email
+              - password
+  "/users/logout":
+    delete:
+      summary: User Sign Out
+      tags:
+      - Users
+      security:
+      - bearer_auth: []
+      responses:
+        '200':
+          description: Logged out successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  message:
+                    type: string
+                required:
+                - status
+                - message
+  "/api/v1/locations":
+    get:
+      summary: Retrieve all locations
+      tags:
+      - Locations
+      responses:
+        '200':
+          description: Locations found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                  required:
+                  - id
+                  - name
+    post:
+      summary: Create a location
+      tags:
+      - Locations
+      parameters: []
+      responses:
+        '200':
+          description: Error creating location
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  error:
+                    type: string
+                required:
+                - error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
+  "/api/v1/reservations":
+    get:
+      summary: Retrieve all reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: Reservations found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                    location_id:
+                      type: integer
+                    user_id:
+                      type: integer
+                    service_id:
+                      type: integer
+                    start_date:
+                      type: string
+                      format: date-time
+                    end_date:
+                      type: string
+                      format: date-time
+                  required:
+                  - id
+                  - location_id
+                  - user_id
+                  - service_id
+                  - start_date
+                  - end_date
+    post:
+      summary: Create a reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: Error creating reservation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  location_id:
+                    type: integer
+                  user_id:
+                    type: integer
+                  service_id:
+                    type: integer
+                  start_date:
+                    type: string
+                    format: date-time
+                  end_date:
+                    type: string
+                    format: date-time
+                  error:
+                    type: string
+                required:
+                - error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                location_id:
+                  type: integer
+                user_id:
+                  type: integer
+                service_id:
+                  type: integer
+                start_date:
+                  type: string
+                  format: date-time
+                end_date:
+                  type: string
+                  format: date-time
+              required:
+              - location_id
+              - user_id
+              - service_id
+              - start_date
+              - end_date
+  "/api/v1/reservations/{id}":
+    get:
+      summary: Retrieve a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Reservation found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  location_id:
+                    type: integer
+                  user_id:
+                    type: integer
+                  service_id:
+                    type: integer
+                  start_date:
+                    type: string
+                    format: date-time
+                  end_date:
+                    type: string
+                    format: date-time
+                required:
+                - id
+                - location_id
+                - user_id
+                - service_id
+                - start_date
+                - end_date
+        '404':
+          description: Reservation not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+    delete:
+      summary: Delete a reservation
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Reservation deleted
+        '404':
+          description: Reservation not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+  "/api/v1/services":
+    get:
+      summary: Retrieve all services
+      tags:
+      - Services
+      responses:
+        '200':
+          description: Services found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    price:
+                      type: number
+                    image:
+                      type: string
+                    details:
+                      type: string
+                    duration:
+                      type: integer
+                    rating:
+                      type: number
+                  required:
+                  - id
+                  - name
+                  - price
+                  - image
+                  - details
+                  - duration
+                  - rating
+    post:
+      summary: Create a service
+      tags:
+      - Services
+      parameters: []
+      responses:
+        '200':
+          description: Error creating service
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  price:
+                    type: number
+                  image:
+                    type: string
+                  details:
+                    type: string
+                  duration:
+                    type: integer
+                  rating:
+                    type: number
+                  error:
+                    type: string
+                required:
+                - error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+                image:
+                  type: string
+                details:
+                  type: string
+                duration:
+                  type: integer
+                rating:
+                  type: number
+              required:
+              - name
+              - price
+              - image
+              - details
+              - duration
+              - rating
+  "/api/v1/services/{id}":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    get:
+      summary: Retrieve a service
+      tags:
+      - Services
+      responses:
+        '200':
+          description: Service found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  price:
+                    type: number
+                  image:
+                    type: string
+                  details:
+                    type: string
+                  duration:
+                    type: integer
+                  rating:
+                    type: number
+                required:
+                - id
+                - name
+                - price
+                - image
+                - details
+                - duration
+                - rating
+        '404':
+          description: Service not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+    delete:
+      summary: Delete a service
+      tags:
+      - Services
+      responses:
+        '204':
+          description: Service deleted
+        '404':
+          description: Service not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                required:
+                - error
+  "/api/v1/users":
+    get:
+      summary: Retrieve all users
+      tags:
+      - Users
+      responses:
+        '200':
+          description: Users found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                    full_name:
+                      type: string
+                    email:
+                      type: string
+                    role:
+                      type: string
+                  required:
+                  - id
+                  - full_name
+                  - email
+                  - role
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: localhost:3000
