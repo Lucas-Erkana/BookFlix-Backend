@@ -40,8 +40,7 @@ This app is build with Ruby on Rails and Postgresql.
 > <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
 > <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
 > <li><a href="https://www.postgresql.org/">Postgresql</a></li>
-> <li><a href="https://reactjs.org/">React</a></li>
-> <li><a href="https://redux.js.org/">Redux</a></li>
+
 
 <!-- Features -->
 
