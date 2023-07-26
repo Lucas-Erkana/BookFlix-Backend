@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
   before do
-    @user = User.create(full_name: 'Saba Ahmed', email: 'saba@test.com', password: '123456')
+    @user = User.create(full_name: 'Saba Ahmed', email: 'saba@test.com', password: 'saba456')
     @location = Location.create(name: 'Punjab')
     @service = Service.create(name: 'Fast X', details: 'blah blah blah blah blah blah blah blah', price: 123,
                               duration: 3, image: 'https://demo.com/image.jpg', trailer: 'https://demo.com/trailer.mp4')
