@@ -1,4 +1,10 @@
-User.create(full_name: "Lucas", role: "admin", email: "admin@gmail.com", password: "123456")
+cities = ["Windhoek", "Nairobi", "Punjab", 
+"Kampala", "Kabul", "Walvis Bay", "Islamabad"]
+cities.each do |city|
+    Location.create(name: city)
+end
+
+User.create(full_name: "Lucas", role: "admin", email: "lderkana21x@gmail.com", password: "123456")
 users = ["Lucas", "Kevin", "Saba", "Samson", "Faranosh", "Jenny"]
 users.each do |user|
     User.create(full_name: user, role: "user", email: user+"@gmail.com", password: "123456")
@@ -18,3 +24,13 @@ Service.create(name: "Guardians of the Galaxy Vol. 3", details: "Still reeling f
 Service.create(name: "John Wick: Chapter 4", details: "John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.", price: 6.8, duration: 2, image: "https://image.tmdb.org/t/p/original/vppo7eOOkkjoSoBSglYIxLDB0dJ.jpg", trailer: "https://www.youtube.com/watch?v=qEVUtrk8_B4")
 
 Service.create(name: "Extraction II", details: "After barely surviving his grievous wounds from his mission in Dhaka, Bangladesh, Tyler Rake is back, and his team is ready to take on their next mission.", price: 7.50, duration: 2, image: "https://sportshub.cbsistatic.com/i/2023/05/15/64e0b909-8be4-4215-bbd9-e5049fcab319/extraction-2-posters.jpg?auto=webp&width=1080&height=1350&crop=0.8:1,smart", trailer: "https://www.youtube.com/watch?v=mO0OuR26IZM")
+
+
+reservations = [
+    {start_date: "2021-05-01", end_date: "2021-05-03", location_id: 2, user_id: 1, service_id: 2},
+    {start_date: "2021-05-01", end_date: "2021-05-03", location_id: 3, user_id: 1, service_id: 3}
+]
+
+reservations.each do |reservation|  
+    Reservation.create(reservation)
+end
