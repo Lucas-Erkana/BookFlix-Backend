@@ -268,7 +268,7 @@ Devise.setup do |config|
   config.navigational_formats = []
 
   config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials.secret_key_base || ENV['SECRET_KEY_BASE'] || 'e5c5f95c16c7518807eb5750cbc322c69ab661c9c29d2e6dae714b0dfe370602440d77e9410deb071ec522df849da1db1bbcd95544fb83102178c3cfdcc218a3'
+    jwt.secret = Rails.application.credentials.secret_key_base || ENV['SECRET_KEY_BASE'] || '7ac062af0f2a700cfdb000d32fe28164756ce3fa48d8f53dd27a6cd0959df37d2e008abc63b15d950f829ae0a83c570d64397293f203391c4d2e8d3f19a56c54'
     jwt.dispatch_requests = [
       ['POST', %r{^/login$}]
     ]
