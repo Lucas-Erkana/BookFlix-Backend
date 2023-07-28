@@ -4,10 +4,10 @@ cities.each do |city|
     Location.create(name: city)
 end
 
-User.create(full_name: "Lucas", role: "admin", email: "lderkana21x@gmail.com", password: "123456")
-users = ["Lucas", "Kevin", "Saba", "Samson", "Faranosh", "Jenny"]
+User.create(full_name: "Bookflix-Admin", role: "admin", email: "admin@bookflix.com", password: "lkss@321")
+users = ["Lucas", "Kevin", "Saba", "Samson"]
 users.each do |user|
-    User.create(full_name: user, role: "user", email: user+"@gmail.com", password: "123456")
+    User.create(full_name: user, role: "user", email: user+"@bookflix.com", password: "123456")
 end
 
 Service.create(name: "Transformers: Rise of the Beasts ", details: "Optimus Prime and the Autobots take on their biggest challenge yet. When a new threat capable of destroying the entire planet emerges, they must team up with a powerful faction of Transformers known as the Maximals to save Earth.", price: 5.57, duration: 2, image: "https://m.media-amazon.com/images/M/MV5BZTNiNDA4NmMtNTExNi00YmViLWJkMDAtMDAxNmRjY2I2NDVjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg", trailer: "https://www.youtube.com/watch?v=itnqEauWQZM")
