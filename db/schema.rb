@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_28_120856) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_29_203410) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.string "image"
+    t.string "details"
+    t.float "duration"
+    t.float "rating"
+    t.string "trailer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,18 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_28_120856) do
     t.index ["location_id"], name: "index_reservations_on_location_id"
     t.index ["service_id"], name: "index_reservations_on_service_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
-  end
-
-  create_table "services", force: :cascade do |t|
-    t.string "name"
-    t.float "price"
-    t.string "image"
-    t.string "details"
-    t.float "duration"
-    t.float "rating"
-    t.string "trailer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_28_120856) do
   end
 
   add_foreign_key "reservations", "locations"
-  add_foreign_key "reservations", "services"
+  add_foreign_key "reservations", "movies", column: "service_id"
   add_foreign_key "reservations", "users"
 end
