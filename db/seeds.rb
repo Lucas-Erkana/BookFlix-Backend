@@ -34,4 +34,3 @@ reservations = [
 reservations.each do |reservation|  
     Reservation.create(reservation)
 end
-
