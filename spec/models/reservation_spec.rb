@@ -4,9 +4,9 @@ RSpec.describe Reservation, type: :model do
   before do
     @user = User.create(full_name: 'Saba Ahmed', email: 'saba@test.com', password: 'saba456')
     @location = Location.create(name: 'Punjab')
-    @service = Service.create(name: 'Fast X', details: 'blah blah blah blah blah blah blah blah', price: 123,
+    @movie = Movie.create(name: 'Fast X', details: 'blah blah blah blah blah blah blah blah', price: 123,
                               duration: 3, image: 'https://demo.com/image.jpg', trailer: 'https://demo.com/trailer.mp4')
-    @reservation = Reservation.new(user_id: @user.id, service_id: @service.id, location_id: @location.id,
+    @reservation = Reservation.new(user_id: @user.id, movie_id: @movie.id, location_id: @location.id,
                                    start_date: '2023-07-28', end_date: '2023-07-29')
   end
 
@@ -17,8 +17,8 @@ RSpec.describe Reservation, type: :model do
     @reservation.user_id = nil
     expect(@reservation).to_not be_valid
   end
-  it 'is not valid without a service_id' do
-    @reservation.service_id = nil
+  it 'is not valid without a movie_id' do
+    @reservation.movie_id = nil
     expect(@reservation).to_not be_valid
   end
 
