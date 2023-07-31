@@ -4,10 +4,10 @@ cities.each do |city|
     Location.create(name: city)
 end
 
-User.create(full_name: "Lucas", role: "admin", email: "lderkana21x@gmail.com", password: "123456")
+User.create(full_name: "Admin", role: "admin", email: "admin@bookflix.app", password: "lkss@321")
 users = ["Lucas", "Kevin", "Saba", "Samson", "Faranosh", "Jenny"]
 users.each do |user|
-    User.create(full_name: user, role: "user", email: user+"@gmail.com", password: "123456")
+    User.create(full_name: user, role: "user", email: user+"@bookflix.app", password: "123456")
 end
 
 Movie.create(name: "Transformers: Rise of the Beasts ", details: "Optimus Prime and the Autobots take on their biggest challenge yet. When a new threat capable of destroying the entire planet emerges, they must team up with a powerful faction of Transformers known as the Maximals to save Earth.", price: 5.57, duration: 2, image: "https://m.media-amazon.com/images/M/MV5BZTNiNDA4NmMtNTExNi00YmViLWJkMDAtMDAxNmRjY2I2NDVjXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg", trailer: "https://www.youtube.com/watch?v=itnqEauWQZM")
@@ -24,7 +24,6 @@ Movie.create(name: "Guardians of the Galaxy Vol. 3", details: "Still reeling fro
 Movie.create(name: "John Wick: Chapter 4", details: "John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.", price: 6.8, duration: 2, image: "https://image.tmdb.org/t/p/original/vppo7eOOkkjoSoBSglYIxLDB0dJ.jpg", trailer: "https://www.youtube.com/watch?v=qEVUtrk8_B4")
 
 Movie.create(name: "Extraction II", details: "After barely surviving his grievous wounds from his mission in Dhaka, Bangladesh, Tyler Rake is back, and his team is ready to take on their next mission.", price: 7.50, duration: 2, image: "https://sportshub.cbsistatic.com/i/2023/05/15/64e0b909-8be4-4215-bbd9-e5049fcab319/extraction-2-posters.jpg?auto=webp&width=1080&height=1350&crop=0.8:1,smart", trailer: "https://www.youtube.com/watch?v=mO0OuR26IZM")
-
 
 reservations = [
     {start_date: "2021-05-01", end_date: "2021-05-03", location_id: 2, user_id: 1, movie_id: 2},
