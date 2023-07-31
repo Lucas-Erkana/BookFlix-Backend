@@ -4,7 +4,7 @@ cities.each do |city|
     Location.create(name: city)
 end
 
-User.create(full_name: "Admin", role: "admin", email: "admin@bookflix.app", password: "lkss@321")
+User.create(full_name: "Admin", role: "admin", email: "admin@bookflix.app", password: "lkss@4321")
 users = ["Lucas", "Kevin", "Saba", "Samson", "Faranosh", "Jenny"]
 users.each do |user|
     User.create(full_name: user, role: "user", email: user+"@bookflix.app", password: "123456")
