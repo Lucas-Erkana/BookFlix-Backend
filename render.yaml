@@ -1,7 +1,7 @@
 databases:
   - name: bookflix
-    databaseName: bookflix_h41v
-    user: bookflix_h41v_user
+    databaseName: bookflix_ij11
+    user: bookflix_ij11_user
 
 services:
   - type: web
