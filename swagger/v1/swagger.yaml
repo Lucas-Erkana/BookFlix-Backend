@@ -148,6 +148,156 @@ paths:
                   type: string
               required:
               - name
+  "/api/v1/movies":
+    get:
+      summary: Retrieve all movies
+      tags:
+      - Movies
+      responses:
+        '200':
+          description: Movies found
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    price:
+                      type: number
+                    image:
+                      type: string
+                    details:
+                      type: string
+                    duration:
+                      type: number
+                    rating:
+                      type: number
+                    trailer:
+                      type: string
+                  required:
+                  - id
+                  - name
+                  - price
+                  - image
+                  - details
+                  - duration
+                  - rating
+    post:
+      summary: Create a Movie
+      tags:
+      - Movies
+      parameters: []
+      responses:
+        '200':
+          description: Error creating movie
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  price:
+                    type: number
+                  image:
+                    type: string
+                  details:
+                    type: string
+                  duration:
+                    type: number
+                  rating:
+                    type: number
+                  trailer:
+                    type: string
+                  error:
+                    type: string
+                required:
+                - error
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+                image:
+                  type: string
+                details:
+                  type: string
+                duration:
+                  type: number
+                rating:
+                  type: number
+                trailer:
+                  type: string
+              required:
+              - name
+              - price
+              - image
+              - details
+              - duration
+              - rating
+              - trailer
+  "/api/v1/movies/{id}":
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    get:
+      summary: Retrieve a movie
+      tags:
+      - Movies
+      responses:
+        '200':
+          description: Movie found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  price:
+                    type: number
+                  image:
+                    type: string
+                  details:
+                    type: string
+                  duration:
+                    type: number
+                  rating:
+                    type: number
+                  trailer:
+                    type: string
+                required:
+                - id
+                - name
+                - price
+                - image
+                - details
+                - duration
+                - rating
+                - trailer
+    delete:
+      summary: Delete a movie
+      tags:
+      - Movies
+      responses:
+        '204':
+          description: Movie deleted
   "/api/v1/reservations":
     get:
       summary: Retrieve all reservations
@@ -168,7 +318,7 @@ paths:
                       type: integer
                     user_id:
                       type: integer
-                    service_id:
+                    movie_id:
                       type: integer
                     start_date:
                       type: string
@@ -180,7 +330,7 @@ paths:
                   - id
                   - location_id
                   - user_id
-                  - service_id
+                  - movie_id
                   - start_date
                   - end_date
     post:
@@ -202,7 +352,7 @@ paths:
                     type: integer
                   user_id:
                     type: integer
-                  service_id:
+                  movie_id:
                     type: integer
                   start_date:
                     type: string
@@ -224,7 +374,7 @@ paths:
                   type: integer
                 user_id:
                   type: integer
-                service_id:
+                movie_id:
                   type: integer
                 start_date:
                   type: string
@@ -235,7 +385,7 @@ paths:
               required:
               - location_id
               - user_id
-              - service_id
+              - movie_id
               - start_date
               - end_date
   "/api/v1/reservations/{id}":
@@ -263,7 +413,7 @@ paths:
                     type: integer
                   user_id:
                     type: integer
-                  service_id:
+                  movie_id:
                     type: integer
                   start_date:
                     type: string
@@ -275,7 +425,7 @@ paths:
                 - id
                 - location_id
                 - user_id
-                - service_id
+                - movie_id
                 - start_date
                 - end_date
         '404':
@@ -304,168 +454,6 @@ paths:
           description: Reservation deleted
         '404':
           description: Reservation not found
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-                required:
-                - error
-  "/api/v1/services":
-    get:
-      summary: Retrieve all services
-      tags:
-      - Services
-      responses:
-        '200':
-          description: Services found
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  properties:
-                    id:
-                      type: integer
-                    name:
-                      type: string
-                    price:
-                      type: number
-                    image:
-                      type: string
-                    details:
-                      type: string
-                    duration:
-                      type: integer
-                    rating:
-                      type: number
-                  required:
-                  - id
-                  - name
-                  - price
-                  - image
-                  - details
-                  - duration
-                  - rating
-    post:
-      summary: Create a service
-      tags:
-      - Services
-      parameters: []
-      responses:
-        '200':
-          description: Error creating service
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  name:
-                    type: string
-                  price:
-                    type: number
-                  image:
-                    type: string
-                  details:
-                    type: string
-                  duration:
-                    type: integer
-                  rating:
-                    type: number
-                  error:
-                    type: string
-                required:
-                - error
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                price:
-                  type: number
-                image:
-                  type: string
-                details:
-                  type: string
-                duration:
-                  type: integer
-                rating:
-                  type: number
-              required:
-              - name
-              - price
-              - image
-              - details
-              - duration
-              - rating
-  "/api/v1/services/{id}":
-    parameters:
-    - name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-    get:
-      summary: Retrieve a service
-      tags:
-      - Services
-      responses:
-        '200':
-          description: Service found
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  name:
-                    type: string
-                  price:
-                    type: number
-                  image:
-                    type: string
-                  details:
-                    type: string
-                  duration:
-                    type: integer
-                  rating:
-                    type: number
-                required:
-                - id
-                - name
-                - price
-                - image
-                - details
-                - duration
-                - rating
-        '404':
-          description: Service not found
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
-                required:
-                - error
-    delete:
-      summary: Delete a service
-      tags:
-      - Services
-      responses:
-        '204':
-          description: Service deleted
-        '404':
-          description: Service not found
           content:
             application/json:
               schema:

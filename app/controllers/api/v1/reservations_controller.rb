@@ -21,7 +21,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:location_id, :user_id, :service_id, :start_date, :end_date)
+    params.require(:reservation).permit(:location_id, :user_id, :movie_id, :start_date, :end_date)
   end
 
   def new

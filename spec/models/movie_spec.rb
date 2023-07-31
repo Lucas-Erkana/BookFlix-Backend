@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Service, type: :model do
+RSpec.describe Movie, type: :model do
   subject do
-    @service = Service.new(name: 'Fast X', details: 'blah blah blah blah blah blah blah blah', price: 123,
-                           duration: 3, image: 'https://demo.com/image.jpg', trailer: 'https://demo.com/trailer.mp4')
+    @movie = Movie.new(name: 'Fast X', details: 'blah blah blah blah blah blah blah blah', price: 123,
+                       duration: 3, image: 'https://demo.com/image.jpg', trailer: 'https://demo.com/trailer.mp4')
   end
 
   it 'should be valid' do
