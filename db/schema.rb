@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_29_203410) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_30_210922) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,7 +40,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_29_203410) do
     t.bigint "service_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "movie_id"
     t.index ["location_id"], name: "index_reservations_on_location_id"
+    t.index ["movie_id"], name: "index_reservations_on_movie_id"
     t.index ["service_id"], name: "index_reservations_on_service_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
@@ -62,6 +64,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_29_203410) do
   end
 
   add_foreign_key "reservations", "locations"
-  add_foreign_key "reservations", "movies", column: "service_id"
+  add_foreign_key "reservations", "movies"
   add_foreign_key "reservations", "users"
 end

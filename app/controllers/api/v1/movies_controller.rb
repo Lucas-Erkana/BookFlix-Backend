@@ -5,7 +5,14 @@ class Api::V1::MoviesController < ApplicationController
   end
 
   def show
-    render json: @movie
+    @movie = Movie.find_by(id: params[:id])
+    if @movie
+      render json: @movie, status: 200
+    else
+      render json: {
+        error: 'Movie not found', status: 404
+      }
+    end
   end
 
   def create
