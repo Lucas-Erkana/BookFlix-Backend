@@ -5,7 +5,7 @@ RSpec.describe Reservation, type: :model do
     @user = User.create(full_name: 'Saba Ahmed', email: 'saba@test.com', password: 'saba456')
     @location = Location.create(name: 'Punjab')
     @movie = Movie.create(name: 'Fast X', details: 'blah blah blah blah blah blah blah blah', price: 123,
-                              duration: 3, image: 'https://demo.com/image.jpg', trailer: 'https://demo.com/trailer.mp4')
+                          duration: 3, image: 'https://demo.com/image.jpg', trailer: 'https://demo.com/trailer.mp4')
     @reservation = Reservation.new(user_id: @user.id, movie_id: @movie.id, location_id: @location.id,
                                    start_date: '2023-07-28', end_date: '2023-07-29')
   end

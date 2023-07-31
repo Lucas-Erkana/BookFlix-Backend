@@ -24,9 +24,9 @@ RSpec.describe Api::V1::MoviesController, type: :request do
         run_test! do
           # Create some sample services for testing
           Movie.create!(name: 'Movie 1', price: 10.0, image: 'image1.jpg', details: 'Movie 1 Details', duration: 60,
-                          rating: 4.5, trailer: 'trailer1.mp4')
+                        rating: 4.5, trailer: 'trailer1.mp4')
           Movie.create!(name: 'Movie 2', price: 15.0, image: 'image2.jpg', details: 'Movie 2 Details', duration: 90,
-                          rating: 3.8, trailer: 'trailer2.mp4')
+                        rating: 3.8, trailer: 'trailer2.mp4')
 
           # Make a request to retrieve all services
           get '/api/v1/movies'
@@ -71,7 +71,7 @@ RSpec.describe Api::V1::MoviesController, type: :request do
                  details: { type: :string },
                  duration: { type: :number },
                  rating: { type: :number },
-                  trailer: { type: :string }
+                 trailer: { type: :string }
                },
                required: %w[id name price image details duration rating trailer]
 
@@ -89,7 +89,7 @@ RSpec.describe Api::V1::MoviesController, type: :request do
 
         run_test! do
           # Make a request to create a movie
-          post '/api/v1/movies', params: { movie: movie }
+          post '/api/v1/movies', params: { movie: }
 
           # Assert the response status code
           expect(response).to have_http_status(:ok)
@@ -111,7 +111,7 @@ RSpec.describe Api::V1::MoviesController, type: :request do
 
         run_test! do
           # Make a request to create a movie with invalid data
-          post '/api/v1/movies', params: { movie: movie }
+          post '/api/v1/movies', params: { movie: }
 
           # Assert the response status code
           expect(response).to have_http_status(:ok)
@@ -146,7 +146,7 @@ RSpec.describe Api::V1::MoviesController, type: :request do
 
         let(:id) do
           Movie.create!(name: 'Movie 2', price: 15.0, image: 'image2.jpg', details: 'Movie 2 Details', duration: 90,
-            rating: 3.8, trailer: 'trailer2.mp4').id
+                        rating: 3.8, trailer: 'trailer2.mp4').id
         end
 
         run_test! do
@@ -169,7 +169,7 @@ RSpec.describe Api::V1::MoviesController, type: :request do
       response '204', 'Movie deleted' do
         let(:id) do
           Movie.create!(name: 'Movie 1', price: 10.0, image: 'image1.jpg', details: 'Movie 1 Details', duration: 60,
-                         rating: 4.5, trailer:"bucci.jpg").id
+                        rating: 4.5, trailer: 'bucci.jpg').id
         end
 
         run_test! do
