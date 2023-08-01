@@ -73,7 +73,6 @@ In order to run this project you need:
 
 ![BookFlix](https://github.com/Lucash2022/BookFlix-Backend/assets/41428579/ed31191f-e5a7-4efc-9ce7-cf8cd40da20d)
 
-
 ### Front-end Repository
 
 - Here is the link to the [Front-End](https://github.com/Lucash2022/BookFlix-Frontend)
