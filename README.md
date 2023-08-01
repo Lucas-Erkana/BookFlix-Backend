@@ -149,20 +149,15 @@ rspec ./spec/models
 - Twitter: [@torobucii](https://twitter.com/@torobucii)
 - LinkedIn: [Kevin Toro](https://www.linkedin.com/in/kevin-toro-047181238/)
 
-  👤 **Saba Ahmad**
+👤 **Saba Ahmad**
 
 - GitHub: [@SabaAhmad404](https://github.com/SabaAhmad404)
 - LinkedIn: [Saba Ahmad](https://www.linkedin.com/in/saba-ahmad-97b938244/)
 
-👤 **Sam**
+👤 **Sam Tush**
 
 - GitHub: [@SamTush](https://github.com/SamTush)
-
-👤 **Faranosh Amini**
-
-- GitHub: [@githubhandle](https://github.com/FaranoshAmini)
-- Twitter: [@twitterhandle](https://twitter.com/Faranosh_Amini)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/faranosh-amini-9b925b23a/)
+- LinkedIn: [Saba Ahmad](https://www.linkedin.com/in/samson-tush/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
