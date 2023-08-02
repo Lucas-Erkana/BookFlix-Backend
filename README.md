@@ -79,7 +79,8 @@ In order to run this project you need:
 
 ### Initial State of Kanban Board
 
-![kanban](#)
+![KanBan3](https://github.com/Lucash2022/BookFlix-Backend/assets/41428579/2a3ad584-9a80-4ad5-9fc7-84f72ef16568)
+
 
 ### Setup
 
