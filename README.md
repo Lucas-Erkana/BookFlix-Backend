@@ -91,6 +91,11 @@ In order to run this project you need:
 
 ![KanBan3](https://github.com/Lucash2022/BookFlix-Backend/assets/41428579/2a3ad584-9a80-4ad5-9fc7-84f72ef16568)
 
+- We started as a team of five team members, but we ended with four.
+  - [Lucas Erkana](https://github.com/Lucash2022)
+  - [Kevin Toro](https://github.com/torobucci)
+  - [Samson Tush](https://github.com/SabaAhmad404)
+  - [Saba Ahmad](https://github.com/SamTush)
 
 ### Setup
 
