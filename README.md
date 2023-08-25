@@ -81,18 +81,18 @@ In order to run this project you need:
 
 ### App Screenshot
 
-![BookFlix](https://github.com/Lucash2022/BookFlix-Backend/assets/41428579/ed31191f-e5a7-4efc-9ce7-cf8cd40da20d)
+![BookFlix](https://github.com/Lucas-Erkana/BookFlix-Backend/assets/41428579/ed31191f-e5a7-4efc-9ce7-cf8cd40da20d)
 
 ### Front-end Repository
 
-- Here is the link to the [Front-End](https://github.com/Lucash2022/BookFlix-Frontend)
+- Here is the link to the [Front-End](https://github.com/Lucas-Erkana/BookFlix-Frontend)
 
 ### Initial State of Kanban Board
 
-![KanBan3](https://github.com/Lucash2022/BookFlix-Backend/assets/41428579/2a3ad584-9a80-4ad5-9fc7-84f72ef16568)
+![KanBan3](https://github.com/Lucas-Erkana/BookFlix-Backend/assets/41428579/2a3ad584-9a80-4ad5-9fc7-84f72ef16568)
 
 - We started as a team of five team members, but we ended with four.
-  - [Lucas Erkana](https://github.com/Lucash2022)
+  - [Lucas Erkana](https://github.com/Lucas-Erkana)
   - [Kevin Toro](https://github.com/torobucci)
   - [Samson Tush](https://github.com/SabaAhmad404)
   - [Saba Ahmad](https://github.com/SamTush)
@@ -102,7 +102,7 @@ In order to run this project you need:
 - Clone this repository to your desired folder:
 
 ```sh
-   git clone https://github.com/Lucash2022/BookFlix-Backend.git
+   git clone https://github.com/Lucas-Erkana/BookFlix-Backend.git
 ```
 
 - Navigate into the cloned folder
@@ -155,10 +155,10 @@ rspec ./spec/models
 
 👤 **Lucas Erkana**
 
-- GitHub: [@Lucash2022](https://github.com/Lucash2022)
+- GitHub: [@Lucas-Erkana](https://github.com/Lucas-Erkana)
 - Twitter: [@Lucas_David_22](https://twitter.com/@Lucas_David_22)
 - LinkedIn: [Lucas Erkana](https://www.linkedin.com/in/lucas-erkana/)
-- Frontend Mentor - [@Lucash2022](https://www.frontendmentor.io/profile/Lucash2022)
+- Frontend Mentor - [@Lucas-Erkana](https://www.frontendmentor.io/profile/Lucas-Erkana)
 
 👤 **Kevin Toro**
 - GitHub: [@torobucii](https://github.com/torobucci)
@@ -184,7 +184,7 @@ rspec ./spec/models
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Lucash2022/BookFlix-Backend/issues).
+Feel free to check the [issues page](https://github.com/Lucas-Erkana/BookFlix-Backend/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
